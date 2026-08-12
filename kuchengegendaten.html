@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Kuchen gegen Daten</title>
+    <meta name="author" content="&Eacute;mile Jeremias Ruff">        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+    <style>
+        @font-face  {
+            font-family: 'lostinsouth';
+            src: url('lostinsouth.otf');
+        }
+        
+        @font-face  {
+            font-family: 'calibri';
+            src: url('calibri.ttf');
+        }
+        
+        @font-face {
+            font-family: 'architectsdaughter';
+            src: url('architectsdaughter.ttf');
+        }
+        
+        a {
+            color: #2482ff;
+        }
+        
+        body {
+            font-family: "calibri";
+            font-size: 16px;
+            background-color: #fef5e9;
+        }
+        
+        main {
+            width: 90%;
+            margin: 10% 0 0 5%;
+            line-height: 1.5rem;
+        }
+        
+        main > img {
+            pointer-events: none;
+            width: 80%;
+            height: auto;
+            margin-bottom: 8%;
+        }
+        
+        /* h1 {
+            font-family: "lostinsouth";
+            font-size: 6rem;
+            line-height: 5rem;
+        } */
+        
+        h2:not(#idee h2) {
+            margin: 60px 0 -7px 10px;
+        }
+
+        h2, h3 {
+            font-family: "architectsdaughter";
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+        }
+        
+        nav {
+            margin-left: 30px;
+            margin-top: ;
+        }
+        
+        nav ul {
+            display: block;
+            gap: 20px;
+            margin-top: 0px;
+        }
+       
+        nav ul li {
+            list-style-type: ;
+            font-size: 18px;
+        }        
+        
+        nav a {
+            color: black;
+            text-decoration: none;
+        }
+        
+        #anfang {
+            display: flex;
+            position: relative;
+        }
+        
+        #anfang img:nth-of-type(1) {
+            padding-top: 20px;
+            width: auto;
+            height: 110px;
+        }
+        
+        #anfang img:nth-of-type(2) {
+            position: absolute;
+            top: 120px;
+            left: 30%;
+            width: 50%;
+            height: auto;
+        }
+        
+        #idee h2 {
+            margin-top: 100px;
+        }
+        
+        #muffins img:nth-of-type(1), 
+        #kuchen img:nth-of-type(1),
+        #torte img:nth-of-type(1) {
+            height: 5px;
+            width: auto;
+        }
+        
+        #muffins h3, #kuchen h3, #torte h3 {
+            margin-top: 12px;
+        }
+        
+        main > div > div {
+            border-left: 1px solid black;
+            padding-left: 20px;
+            margin-bottom: 50px;
+        }
+        
+        main > div > div p:nth-last-of-type(2), 
+        main > div > div p:last-of-type {
+            /* border: 1px red solid; */
+            margin-top: 25px;
+        }
+        
+        main > div > div ul:last-of-type {
+            margin-top: -10px;
+        }
+
+        #fremde-apps {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            z-index: 1;
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip::before {
+            content: "";
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-top: -3px;
+            background: url("tooltip.png") center/contain no-repeat;
+            vertical-align: middle;
+        }
+
+        .tooltip::after {
+            content: attr(data-tooltip);
+            color: grey;
+            display: none;
+            margin-left: 6px;
+        }
+
+        .tooltip.show::after {
+            display: inline;
+        }
+
+        .bedingungen {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+           
+        .bedingungen li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .bedingungen li:before {
+            content: "";
+            background-image: url("checkmark.png");
+            background-repeat: none;
+            background-size: contain;
+            display: block;
+            flex: 0 0 1rem;
+            height: 1rem;
+            width: 1rem;
+        }
+        
+        .bedingungen li span {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+<main>
+    <!--h1>Kuchen gegen Daten</h1-->
+    <img src="kgd.png" alt="Ueberschrift: Kuchen gegen Daten">
+    <p>Datenschutz ist toll >ᴗ< &nbsp;- und deswegen gibt's Kuchen!
+    Für jeden Schritt in Richtung digitaler Privatsphäre oder 
+    Sicherheit bekommst du ein Stückchen Ofenkost von mir. <br>
+    
+    Der minimale Zeitaufwand beträgt etwa fünf Minuten - alle Angebote
+    stehen kostenfrei zur Verfügung.</p>
+    
+    <div id="anfang">
+    <img src="brownies.png" alt="Grafik einer Torte">
+    <img src="muffins.png" alt="">
+    <nav>
+        <ul>
+            <li><a href="#idee">Idee</a></li>
+            <li><a href="#muffins">Muffins</a></li>
+            <li><a href="#kuchen">Kuchen</a></li>
+            <li><a href="#torte">Torte</a></li>
+        </ul>
+    </nav>
+    </div>
+    
+    <!--div style="border: none;">
+        <img src="brownies.png" alt="Grafik von Brownies">
+        <img src="muffins.png" alt="Grafik eines Kuchen">
+        <img src="torte.png" alt="Grafik einer Torte">
+    </div-->
+    
+    
+    <div id="idee">
+        <h2>Die Idee</h2>
+        <p>Im realen Leben haben wir einen Bankengeheimnis, ein Briefgeheimnis, 
+        Vorhänge vor den Fenstern und geben nicht jedem Pedo auf der Straße unsere 
+        Adresse - im Netz interessiert das die wenigsten. Doch wir mögen Kuchen. Und da 
+        kurzfristige Belohnung bekanntlich besser wirkt als inhaltliche Argumente 
+        versuchen wir es auf diesem Wege.</p>
+        
+        <p>Du kannst nun aus drei Kategorien wählen: Muffins, Kuchen und Torte. In jeder 
+        Kategorie sind Möglichkeiten gelistet, wie du deine Privatsphäre und Sicherheit 
+        im Internet erhöhen kannst. Setzt du eine davon in die Tat um, so kannst du dich 
+        bei mir melden und einen Wunsch abgeben, was du gern gebacken bekommen hättest. 
+        Nach einer erfolgreichen Überprüfung deiner Angaben gehört ein Teil 
+        <span class="tooltip" data-tooltip="Die Größe deines Anteils wird durch die Nachfrage bestimmt ;)"></span> 
+        des Kuchens dir.</p>
+    </div>
+    
+    <!--div>
+        <button onclick="android()">Android</button>
+        <button onclick="apple()">Apple</button>
+    </div-->
+    
+    <div id="muffins">
+        <h2>Muffins</h2>
+        <img src="trennstrich.png" alt="Trennstrich">
+        
+        <h3 onclick="openElement('kalender')">Kalender wechseln</h3>
+        <div id="kalender" style="display: none;">
+            <p><b>was?</b><br>
+            Kalender speichern allerhand Informationen über uns. In erster Linie stellt ein unsicherer Kalender ein 
+            Sicherheitsrisiko dar, da sich aus Terminen Tagesabläufe ableiten lassen, was Stalking und Einbrüche begünstigt. 
+            Integriert der Hersteller zudem noch einen Algorithmus, der deine Daten auswertet, lassen sich weitere Daten 
+            wie deine Adresse, dein Gesundheitszustand und deine sozialen Beziehungen ableiten.</p>
+        
+            <p><b>wie?</b><br>
+            Drei Kalender, die Wert auf Datenschutz und Sicherheit legen, sind <a href="https://tuta.com/de/calendar">Tuta Calendar</a>,
+            <a href="https://github.com/Etar-Group/Etar-Calendar">Etar (Android)</a> 
+            und <a href="https://www.fossify.org/apps/calendar/">Fossify Calendar (Android)</a>
+            Sie lassen sich über den Google Play Store bzw. Apples AppStore herunterladen und sind sychronisierbar mit 
+            anderen Geräten.</p>
+            
+            <p><b>Muffins?</b><br>
+            <ul class="bedingungen">
+                <li><span>Einrichtung und Nutzung eines Kalenders mit Fokus auf Datenschutz und Sicherheit, zB. 
+                Tuta Calendar, <a href="https://proton.me/de/calendar">Proton Calendar</a>, Etar oder Fossify Calendar</span></li>
+            </ul></p>
+        </div>
+        
+        <h3 onclick="openElement('messenger')">neben Whatsapp einen zusätzlichen Messenger installieren</h3>
+        <div id="messenger" style="display: none;">
+            <p><b>was?</b><br>
+            Messenger sind meist Apps, die über das Internet Nachichten versenden. Das bekannteste Beispiel 
+            dafür ist Whatsapp. Whatsapp erhebt viele private Daten und leitet sie an seinen Mutterkonzern Meta weiter 
+            und von dort aus in die ganze Welt. 
+            <br><br>
+            Viele weitere Messenger bieten die selben oder ähnliche Funktionen wie Whatsapp, ohne dass sie 
+            so viele Daten speichern, die technisch nicht notwendig sind. Der Grund, weshalb Whatsapp sich weiterhin 
+            derart vielen Nutzern erfreut ist, dass man viele Menschen eben nur über diesen Dienst erreicht. Durch die 
+            Installation eines zusätzlichen Messengers wirkst du der Stellung Whatsapps entgegen.</p>
+            
+            <p><b>wie?</b><br>
+            Ich empfehle aus persönlicher Erfahrung <a href="">Threema</a> (kostenpflichtig) und <a href="">Signal</a>. 
+            Threema funktioniert wie auch der Dienst <a href="">Element</a> ohne Telefonnummer, erfordert jedoch im Gegensatz 
+            zu Element noch die Installation einer App. Alle drei sind über den Google Play Store und Apples App Store herunterladbar.</p>
+        
+            <p><b>Muffins?</b><br>
+            <ol class="bedingungen">
+                <li><span>Installation und Einrichtung eines zusätzlichen Messengers mit Fokus auf Sicherheit und Datenschutz, 
+                zB: Threema, Signal, Element (oder <a href="">Briar</a> ;)</span></li>
+            </ol></p>
+        </div>
+        
+        <h3 onclick="openElement('2fa')">Zwei-Faktor-Authentifizierung</h3>
+        <div id="2fa" style="display: none;">
+            <p>Alle drei Minuten wird ein Account im Internet geknackt - eine Zwei-Faktor-Authetifizierung 
+            kann die Chance dafür auf nahezu Null senken.</p>
+            
+            <p><b>was?</b><br>
+            Üblicherweise authentifiziert man sich nur mit einem Passwort, also mit einem Faktor.
+            Fügt man jetzt noch einen zweiten Faktor hinzu, wie beispielsweise eine Bestätigung 
+            per App oder per Einmalcode, so spricht man von einer Zwei-Faktor-Authentifizierung, 
+            auch 2FA.
+            <br><br>
+            Am gebräuchchlisten sind dabei Einmal-Codes (oder auch One-Time-Passwort/ OTP): Für jeden 
+            Login gibt man nicht nur ein Passwort sondern auch einen sechsstelligen Zahlencode ein. Selbst 
+            wenn jemand dein Passwort errät ist die Wahrscheinlichkeit minimal, dass der Angreifer den 
+            Einmal-Code errät, der jede Minute neu generiert wird.</p>
+            
+            <p><b>wie?</b><br>
+            Für jeden Account richtet man eine eigene 2FA ein. Das dauert nur wenige Minuten und läuft 
+            typischerweise so ab:</p>
+            <ol>
+                <li>Installiere dir eine App zum Berechnen der Einmal-Codes, zB: <a href="https://freeotp.github.io/">FreeOTP</a> 
+                    oder <a href="https://github.com/helloworld1/FreeOTPPlus">FreeOTP Plus</a></li>
+                <li>Logge dich in den zu sichernden Account ein und gehe in die Accounteinstellungen -> Sicherheit -> 
+                    Zwei-Faktor-Authentifizierung und bestätige</li></li></li>
+                <li>Meist musst du einen QR-Code scannen oder einen Link klicken. Dann wird 2FA automatisch 
+                    der App hinzugefügt. <span onclick="openElement('2fa-manuell')">Was wenn nicht?</span><br>
+                    <span id="2fa-manuell" style="display: none;">Alternativ kannst du das 16-stelligen Geheimnis/Secret auch manuell 
+                    kopieren und in der OTP-App in einem neuen Eintrag speichern.</span></li>
+                <li>Kopiere den ersten Einmal-Code und gebe ihn der Website zur Überprüfung</li>
+            </ol>
+            
+            <p><b>Muffins?</b></p>
+            <ul class="bedingungen">
+                <li><span>2FA für mindestens zwei Accounts aktiviert</span></li>
+                <li><span>2FA für E-Mail-Dienst deiner Haupt-Emailadresse in Nutzung</span></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="kuchen">
+        <h2>Kuchen</h2>
+        <img src="trennstrich.png" alt="Trennstrich">
+        
+        <h3 onclick="openElement('browser')">Browser wechseln</h3>
+        <div id="browser" style="display: none;">
+            <p><b>was?</b><br>
+            Mit einem Browser öffnest du Websites - nicht zu verwechseln mit Suchmaschinen, mit denen du zunächst
+            über Stichworte nach einer Website suchst. Die am weit verbreitesten Browser sind Google Chrome, Safari, 
+            Edge und DuckDuckGo. Zu den bekanntesten Suchmaschinen gehört Google Search, Microsoft Bing, Ecosia und 
+            DuckDuckGo.
+            <br><br>
+            Neben der Wahl einer seriösen Suchmaschine spielt auch der Browser eine wichtige Rolle. Da er ein 
+            Tor zum Internet ist, lässt sich über ihn bestimmen welche Daten du mit den Websites und dem Browser 
+            selbst teilst.</p>
+            
+            <p><b>wie?</b><br>
+            Brave (Browser) und Brave Search (Suchmaschine) speichern keine nicht-notwendigen Daten 
+            über dich und blockieren die Tracker und Werbung der Websites. In den meisten Fällen kannst du 
+            die Website vollfunktionstüchtig nutzen. Er ist über den Google Playstore und Apples AppStore 
+            herunterladbar und steht auch Windows- und Mac-Usern zur Verfügung.</p>
+        
+            <p><b>Kuchen?</b><br>
+            <ul class="bedingungen">
+                <li><span>Installation und Nutzung eines Browsers und einer Suchmaschine mit Fokus auf Sicherheit 
+                und Datenschutz, zB. <a href="">Brave</a> oder <a href="">Tor</a>. DuckDuckGo zählt nicht dazu.</span></li>
+                <li><span>Festlegung des Browsers als Standardbrowser</span></li>
+            </ul></p>
+        </div>
+        
+        <h3 onclick="openElement('open-source')">zwei Open-Source-Apps</h3>
+        <div id="open-source" style="display: none;">
+            <p><b>was?</b><br>
+            Im Quellcode einer App oder Website steht geschrieben, wie das Programmm funktioniert und welchd Aufgaben 
+            es ausführt. Beispielsweise sagt der Code dass ein Kalender angezeigt wird und darin die einzelnen Termine, aber 
+            auch dass Daten gespeichert, analysiert und weitergegeben werden.
+            <br><br>
+            „Open-Source“ bedeutet quelloffen - jeder kann den Quellcode einsehen, Probleme melden und daran mitarbeiten. 
+            Das macht das Programm sicherer, da Fehler schneller auffallen. Die Transparenz sorgt auch dafür, dass es schwerer ist,  
+            heimlich Daten zu sammeln und zu verkaufen. Die meisten dieser Apps legen viel Wert auf Datenschutz.</p>
+            
+            <p><b>wie?</b><br>
+            Auf Android und Windows gibt es drei Wege eine App mit offenem Quellcode zu installieren. Wenn du ein iPhone oder Mac o.ä.
+            besitzt, ist ohne eine tiefere Recherche nur Option 1 für dich einfach umsetzbar. Um zu prüfen, ob eine App wirklich open-source 
+            ist, kannst du auf der Website des Projektes/Herstellers den Quellcode suchen. Häufig ist er unter "Github" zu finden.</p>
+            
+            <p>Wichtig: es ist schwer, ohne weiteres Know-How Apps aus fremden Quellen auf Echtheit und Integrität zu überprüfen. Sei dir 
+            bewusst, dass mit jeder App deren Quelle du nicht kennst ein Risiko einhergeht. Hole dir im Zweifelsfall Meinung von außerhalb 
+            und <b>installiere kein Programm, dem du nicht vertrauen kannst.</b><span onclick="openElement('fremde-apps')">Mehr erfahren</span></p>
+            
+            <p id="fremde-apps" style="display: none;">Mit jeder Installation eines Programms oder einer App entsteht ein Sicherheitsrisiko. Selbst im Google PlayStore 
+            und auch im AppStore tauchen regelmäßige gefälschte Apps auf.<br>
+            Das Risiko, Malware zu installieren, ist in den vorinstallierten Appstores der Hersteller dennoch deutlich geringer.
+            <br><br>
+            Überprüfe daher am besten jedes Programm auf Kritiken und Beurteilungen von außerhalb.<br>
+            Überprüfe ebenfalls die Domain auf ihre Echtheit, bspw. kannst du in Wikipedia die offizielle Domain des Projektes aufsuchen.<br>
+            <br><br>
+            Windows:<br>
+            Aufgrund der Komplexität und Funktionsweise von Windows stellt Malware dort ein besonders großes Risiko dar. Typische Angriffsszenarien 
+            reichen von heimlichen Datenverarbeitung (Sammeln, Analysieren und Verkaufen von persönlichen Informationen) über das Auslesen von 
+            Passwörtern bis hin zur Verschlüsselung ganzer Systempartitionen zur Erpressung (Ransomware).
+            <br><br>
+            Android:<br>
+            Auf mobilen Geräten wie Android ist das Risiko in den allermeisten Fällen begrenzt, da Apps dort im sogenannten „Sandbox-Modus“ laufen. 
+            Das heißt, dass sie nur auf ihre eigenen Dateien Zugriff haben und andere Apps oder Teile des Gerätes nicht beeinflussen können. Dennoch 
+            birgt Malware zwei Angriffspfade:
+            <ol>
+                <li>du gibst persönliche Informationen innerhalb der App Preis</li>
+                <li>du gibst der App weitere Berechtigungen, wie bspw. Speicherzugriff oder das Mitlesen von Bildschirminhalten</li>
+            </ol>
+            In seltenen Fällen kann die Installation eines Schadprogrammes auch auf Android geräteweite Auswirkungen haben. 
+            <br><br>
+            Um eine vermeintliche Open-Source-App auf Echtheit und Integrität zu überprüfen hast du folgende Möglichkeiten:
+            Häufig laufen quelloffene Projekte über die Plattform "Github". Suche daher nach dem Quellcode der App oder Github über die Website des 
+            Projektes/ Herstellers. Schau dir nun folgende Merkmale an:<br>
+            - Arbeiten mehrere Personen an dem Projekt mit? ("Mitwirkende")<br>
+            - Verfolgen mehrere Personen die Projektänderungen? ("Beobachter")<br>
+            - Werden regelmäßig Updates ausgegeben? ("Versionen")
+            <br><br>
+            Umso mehr Mitwirkende und regelmäßigere, neue Versionen, umso sicherer ist das angebotene Programm.</p>
+            
+            <ul>
+                <li>Google PlayStore / Apples AppStore:<br>
+                Suche im Internet nach "[deine App] open-source" und finde die Website des Projektes/Herstellers. Falls die App auch 
+                über den GPlayStore oder AppStore angeboten wird, verlinkt die Website dahin. Dort kannst du sie installieren.</li>
+                
+                <li>Windows:<br>
+                Suche im Internet nach "[deine App] open-source" und finde die Website des Projektes/Herstellers. Dort steht meist unter 
+                "Download" beschrieben, wie du das Programm installierst. Meist musst du dafür eine .exe, .zip oder . herunterladen und 
+                öffnen.</li>
+                
+                <li>Android ohne GPlayStore:<br>
+                Suche im Internet nach "[deine App] open-source" und finde die Website des Projektes/Herstellers. Um eine App auf Android 
+                ohne den GPlayStore zu installieren, musst du zunächst eine Installationsdatei der App herunterladen. Sie hat das Format .apk.
+                Klicke sie anschließend in deinem Dateimanager (Dateimanager/ Files / Downloads) an und bestätige dass der Dateimanager Apps 
+                aus unbekannten Quellen installieren darf. Öffne sie erneut.</li>
+                
+                <li>Android ohne GPlayStore:<br>
+                Für Android gibt es den alternativen AppStore F-Droid. Du kannst ihn dir als .apk installieren. Einmal eingerichtet 
+                kannst du über ihn unkompliziert neue Apps installieren. Alle in ihm angebotenen Apps sind nicht nur open-source, sondern 
+                auch auf ihre Sicherheit überprüft.</li>
+            </ul>
+        </div>
+        
+        <h3 onclick="openElement('tiktok')">TikTok oder Instagram verlassen</h3>
+        <div id="tiktok" style="display: none;">
+            <p><b>was?</b><br>
+            TikTok erhebt jede Menge Daten über dich, dazu gehören laut dessen Datenschutzerklärung: „“.
+            <br><br>
+            Der Grund, weshalb ich Kuchen gegen das Netzwerk biete ist jedoch ein anderer: 
+            Das rechtfertigt keine gute Unterhaltung.</p>
+        
+            <p><b>wie?</b><br>
+            <ol class="bedingungen">
+                <li>Melde dich in der App oder der Webversion von TikTok an</li>
+                <li>Gehe unter Account-Einstellungen -> Account löschen</li>
+                <li>Lösche die App von deinen Geräten</li>
+                <li>optional: blockiere die Domain tik(zerospace)tok.com in deinem Browser, um TikTok 
+                nicht als Website nutzen zu können<br>
+                -> <a href="">Anleitung</a> für Google Chrome<br>
+                -> <a href="">Anleitung</a> für Safari<br>
+                -> <a href="">Anleitung</a> für Microsoft Edge<br>
+                -> <a href="">Anleitung</a> für Brave<br>
+                -> <a href="">Anleitung</a> für Ecosia<br></li>
+            </ol></p>
+            
+            <p><b>Kuchen und Props?</b><br>
+            <ul>
+                <li><span>Du hast deinen Account bei TikTok gelöscht und ggf. die App deinstalliert</span></li>
+                <li><span>optional: du hast die Domain tiktok.com in deinem Browser blockiert</span></li>
+            </ul></p>
+            
+            <p><b>Die selben Bedingungen gelten auch für Instagram.</b></p>
+        </div>
+        
+        <h3 onclick="openElement('dns')">private DNS nutzen</h3>
+        <div id="dns" style="display: none;">
+            <p>Mittels einer privaten DNS umgehst du Zensur, blockierst Werbung und Tracking - 
+            auf dem gesamten Gerät. Du erlangst mehr Freiheit und Nerven, sparst zudem noch Datenvolumen.</p>
+            
+            <p><b>was?</b>
+            Websites sind auf Servern gespeichert. Jeder Server hat eine eindeutige Nummer, 
+            genannt IP-Adresse. Weil diese schwer zu merken sind, übersetzt ein DNS diese Nummern 
+            in Worte: Domains.<br>
+            91.90.167.233 -> lernsax.de
+            <br><br>
+            Wenn Staaten Websites sperren, „löschen“ sie den Eintrag der Website im DNS und dein 
+            Browser sagt dir nur: "404 - not found". Mit einer selbstfestgelegten DNS kannst 
+            du diese Sperren ignorieren.<br>
+            Außerdem: jede Verbindung die dein Handy mit dem Internet aufnimmt, geht durch dieses
+            System, auch Werbe- und Tracking-Anfragen. Mit einer provaten DNS kannst du sie ganz 
+            einfach herausfiltern. Die Verbindungen werden ganz verhindert, was dich auch mobile 
+            Daten spart.</p>
+            
+            <div><b>wie?</b>
+            Es gibt Organisationen, die ganze Filterlisten gegen Werbung und Tracker zusammenstellen 
+            und Apps, mit denen du diese Filter für dein Gerät einschalten kannst. Hier ein Beispiel 
+                <br><br>
+                <p><i>Android</i><br>
+                <ol>
+                    <li>Registriere dich auf <a href="https://nextdns.io/de">nextdns.io/de</a></li>
+                    <li>Füge deinem Profil einige Filterlisten hinzu. Ich nutze HaGeZi - Multi PRO, OISD und 1Hosts (Lite)</li>
+                    <li>Kopiere die URL unter DNS-over-TLS/QUIC </li>
+                    <li>Gehe in deine Handyeinstellungen -> mehr Verbindungsoptionen/Netzwerk und Internet/Erweitert -> private DNS (oder suche nach "Private DNS")
+                    und kopiere die URL in das enstprechende Feld</li>
+                </ol></p>
+            
+                <p><i>iPhone</i><br>
+                <ol>
+                    <li>Registriere dich auf <a href="https://nextdns.io">nextdns.io/de</a></li>
+                    <li>Füge deinem Profil einige Filterlisten hinzu. Ich nutze HaGeZi - Multi PRO, OISD und 1Hosts (Lite)</li>
+                    <li>Kopiere die URL unter DNS-over-TLS/QUIC </li>
+                    <li>Gehe in deine Handyeinstellungen -> Wlan-Einstellungen -> blaues "i" neben "mein Netzwerk" -> DNS konfigurieren -> manuell kofigurieren</li></li>/li>
+                    und kopiere die URL in das enstprechende Feld</li>
+                </ol></p>
+            </div>
+            
+            <p><b>Kuchen?</b>
+            <ul class="bedingungen">
+                <li><span>private DNS eingerichtet und genutzt (min. ein Gerät/drei Tage)</span></li>
+                <li><span>Nutzung von Filterlisten gegen Tracking</span></li>
+                <li><span>Nutzung eines sicheren und datenschutzfreundlichen DNS-Providers, 
+                bspw. NextDNS, Mullvad DNS oder Quad9</span></li>
+            </ul>
+            
+            </p>
+        </div>
+   </div>
+        
+        <div id="torte">
+            <h2>Torte</h2>
+            <img src="trennstrich.png" alt="Trennstrich">
+        
+            <h3 onclick="openElement('custom-rom')">alternatives Betriebsystem</h3>
+            <div id="custom-rom" style="display: none;">
+                <p>Die allermeisten Computern die man kauft wollen bereits im Auslieferungszustand
+                „nach Hause telefonieren“. Wie kann man sich von Google oder Apple trennen, wenn 
+                das Handy doch von ihnen gebaut wurde? Man überschreibt die Software mit einer anderen.</p>
+                
+                <p><b>was?</b><br>
+                Handys bestehen aus Hardware und Software. Ein Teil der Software nennt man Betriebssystem, 
+                welches typischerweise vom Verkäufer, stammt. Kaufe ich ein Handy von Samsung, so ist da 
+                auch Software von Samsung drauf. Dieses Betriebssystem kann ich gegen ein anderes tauschen.
+                <br><br>
+                Große Communitys haben eigene Betriebssystem erstellt, die mehrere Vorteile bieten:
+                <ul>
+                    <li>Die Software läuft auch auf alten Geräten, für die die Hersteller längst die Udpates eingestellt haben</li>
+                    <li>Die Software ist "open source" - jeder kann sie auf Fehler überprüfen und mitschreiben. Das macht sie besonders sicher</li>
+                    <li>Die Software ist anpassbar. Man kann sie zum Beispiel vollständig ohne Google nutzen</li>
+                </ul>
+                </p>
+                
+                <div><b>wie?</b><br>
+                ...google mal.
+                <br><br>
+                    <p><i>Android</i><br>
+                    Die größten Communitys sind GrapheneOS, LineageOS und /e/. Stichwort zum Recherchieren: Custom-ROM.</p>
+                    
+                    <p><i>iPhone</i><br>
+                    nur sehr begrenzt verfügbar und deutlich schwieriger. Stichwort zum Recherchieren: Jailbreak</p>
+
+                <p><b>Torte und Props</b>
+                <ul class="bedingungen">
+                    <li><span>Custom-ROM installiert</span></li>
+                    <li><span>optional: Gerät ist intakt</span></li>
+                </ul></p></div>
+            </div>
+        </div>
+    </div>
+</main>
+    
+<script>
+const params = new URLSearchParams(window.location.search);
+const topic = params.get("topic");
+
+if (topic) {
+    const element = document.getElementById(topic);
+    element.style.display = "block";
+}
+    
+function openElement(id) {
+    const element = document.getElementById(id);
+    const url = new URL(window.location.href);
+    
+    if (element.style.display === "none") {
+        element.style.display = "block";
+        url.searchParams.set("topic", id);
+        window.history.pushState({}, "", url);
+
+    } else {
+        element.style.display = "none";
+        url.searchParams.delete("topic");
+        history.pushState({}, "", url);
+    }
+}
+    
+// --- Tooltip ---
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".tooltip").forEach(tooltip => {
+    tooltip.setAttribute("title", "Tooltip anzeigen");
+  });
+
+  document.body.addEventListener("click", (e) => {
+    const tooltip = e.target.closest(".tooltip");
+    const all = document.querySelectorAll(".tooltip");
+
+    if (!tooltip) {
+      all.forEach(t => t.classList.remove("show"));
+      return;
+    }
+
+    tooltip.classList.toggle("show");
+  });
+});
+</script>
+</body>
+
+</html>

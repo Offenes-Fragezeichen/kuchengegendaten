@@ -10,54 +10,70 @@
     <style>
         @font-face  {
             font-family: 'lostinsouth';
-            src: url('lostinsouth.otf');
+            src: url('m/lostinsouth.otf');
         }
         
         @font-face  {
             font-family: 'calibri';
-            src: url('calibri.ttf');
+            src: url('m/calibri.ttf');
         }
         
         @font-face {
             font-family: 'architectsdaughter';
-            src: url('architectsdaughter.ttf');
+            src: url('m/architectsdaughter.ttf');
         }
         
-        a {
+        a, .fakeLink {
             color: #2482ff;
+            text-decoration: underline;
         }
         
         body {
             font-family: "calibri";
             font-size: 16px;
             background-color: #fef5e9;
+            padding-bottom: 5px;
         }
         
+            body.darkmode {
+                background-color: #15202a;
+                color: white;
+            }
+        
         main {
-            width: 90%;
-            margin: 10% 0 0 5%;
+            width: 55%;
+            margin: 5% 0 0 20%;
             line-height: 1.5rem;
         }
         
         main > img {
             pointer-events: none;
-            width: 80%;
+            width: 60%;
             height: auto;
             margin-bottom: 8%;
         }
-        
-        /* h1 {
-            font-family: "lostinsouth";
-            font-size: 6rem;
-            line-height: 5rem;
-        } */
+
+        main > p {
+            width: 40%;
+            text-align: right;
+            margin-top: -65%;
+            margin-left: 70%;
+        }
         
         h2:not(#idee h2) {
-            margin: 60px 0 -7px 10px;
+            margin: 100px 0 -7px 10px;
         }
 
         h2, h3 {
             font-family: "architectsdaughter";
+        }
+
+        h3 {
+            cursor: pointer;
+        }
+        
+        h3, main div > div {
+            scroll-margin-top: 60px;
         }
         
         ul, ol {
@@ -65,8 +81,8 @@
         }
         
         nav {
-            margin-left: 30px;
-            margin-top: ;
+            margin-left: 60%;
+            margin-top: 20%;
         }
         
         nav ul {
@@ -85,6 +101,10 @@
             text-decoration: none;
         }
         
+        body.darkmode nav a {
+            color: white;
+        }
+        
         #anfang {
             display: flex;
             position: relative;
@@ -93,23 +113,25 @@
         #anfang img:nth-of-type(1) {
             padding-top: 20px;
             width: auto;
-            height: 110px;
+            height: 120px;
+            left: 55%;
+            position: absolute;
         }
         
         #anfang img:nth-of-type(2) {
             position: absolute;
-            top: 120px;
-            left: 30%;
-            width: 50%;
+            top: 130px;
+            left: 80%;
+            width: 30%;
             height: auto;
         }
         
         #idee h2 {
-            margin-top: 100px;
+            margin-top: 60px;
         }
         
         #muffins img:nth-of-type(1), 
-        #kuchen img:nth-of-type(1),
+        #kuchen img:nth-of-type(1):not(#fremde-apps img),
         #torte img:nth-of-type(1) {
             height: 5px;
             width: auto;
@@ -125,9 +147,12 @@
             margin-bottom: 50px;
         }
         
+            body.darkmode main > div > div {
+                border-left: 1px solid white;
+            }
+        
         main > div > div p:nth-last-of-type(2), 
         main > div > div p:last-of-type {
-            /* border: 1px red solid; */
             margin-top: 25px;
         }
         
@@ -144,6 +169,24 @@
             background-color: rgba(0, 0, 0, 0.9);
             color: white;
             z-index: 1;
+            padding: 10%;
+            padding-top: 20%;
+            overflow-y: scroll;
+            overscroll-behavior: contain;
+            box-sizing: border-box;
+        }
+        
+        #fremde-apps img {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 5%;
+            left: 10%;
+        }
+        
+        main > :last-child {
+            margin-top: 80px;
+            font-family: "architectsdaughter";
         }
         
         .tooltip {
@@ -158,9 +201,13 @@
             width: 15px;
             height: 15px;
             margin-top: -3px;
-            background: url("tooltip.png") center/contain no-repeat;
+            background: url("b/tooltip.png") center/contain no-repeat;
             vertical-align: middle;
         }
+        
+            body.darkmode .tooltip::before {
+                background-image: url("b/tooltip-dark.png");
+            }
 
         .tooltip::after {
             content: attr(data-tooltip);
@@ -182,11 +229,12 @@
             display: flex;
             align-items: flex-start;
             gap: 0.5rem;
+            margin-top: 10px;
         }
 
         .bedingungen li:before {
             content: "";
-            background-image: url("checkmark.png");
+            background-image: url("b/checkmark.png");
             background-repeat: none;
             background-size: contain;
             display: block;
@@ -195,16 +243,60 @@
             width: 1rem;
         }
         
+        body.darkmode .bedingungen li:before {
+            background-image: url("b/checkmark-dark.png");
+        }
+        
         .bedingungen li span {
             display: block;
         }
+
+        @media (max-width: 768px) {
+            main {
+                width: 90%;
+                margin: 10% 0 0 5%;
+            }
+
+            main > p {
+                width: auto;
+                text-align: left;
+                margin-top: 0;
+                margin-left: 0;
+            }
+        
+            #idee h2 {
+                margin-top: 100px;
+            }
+        
+            #anfang img:nth-of-type(1) {
+                width: auto;
+                height: 110px;
+                position: static;
+            }
+        
+            #anfang img:nth-of-type(2) {
+                top: 120px;
+                left: 30%;
+                width: 50%;
+                height: auto;
+            }
+
+            nav {
+                margin-left: 30px;
+                margin-top: 0;
+            }
+        
+            h2:not(#idee h2) {
+                margin: 60px 0 -7px 10px;
+            }
+        }
     </style>
 </head>
-<body>
+<body class="darkmode">
     
 <main>
     <!--h1>Kuchen gegen Daten</h1-->
-    <img src="kgd.png" alt="Ueberschrift: Kuchen gegen Daten">
+    <img src="b/kgd.png" alt="Ueberschrift: Kuchen gegen Daten">
     <p>Datenschutz ist toll >ᴗ< &nbsp;- und deswegen gibt's Kuchen!
     Für jeden Schritt in Richtung digitaler Privatsphäre oder 
     Sicherheit bekommst du ein Stückchen Ofenkost von mir. <br>
@@ -213,24 +305,17 @@
     stehen kostenfrei zur Verfügung.</p>
     
     <div id="anfang">
-    <img src="brownies.png" alt="Grafik einer Torte">
-    <img src="muffins.png" alt="">
-    <nav>
-        <ul>
-            <li><a href="#idee">Idee</a></li>
-            <li><a href="#muffins">Muffins</a></li>
-            <li><a href="#kuchen">Kuchen</a></li>
-            <li><a href="#torte">Torte</a></li>
-        </ul>
-    </nav>
+        <img src="b/brownies.png" alt="Grafik einer Torte">
+        <img src="b/muffins.png" alt="Grafik von Muffins">
+        <nav>
+            <ul>
+                <li><a href="#idee">Idee</a></li>
+                <li><a href="#muffins">Muffins</a></li>
+                <li><a href="#kuchen">Kuchen</a></li>
+                <li><a href="#torte">Torte</a></li>
+            </ul>
+        </nav>
     </div>
-    
-    <!--div style="border: none;">
-        <img src="brownies.png" alt="Grafik von Brownies">
-        <img src="muffins.png" alt="Grafik eines Kuchen">
-        <img src="torte.png" alt="Grafik einer Torte">
-    </div-->
-    
     
     <div id="idee">
         <h2>Die Idee</h2>
@@ -249,14 +334,9 @@
         des Kuchens dir.</p>
     </div>
     
-    <!--div>
-        <button onclick="android()">Android</button>
-        <button onclick="apple()">Apple</button>
-    </div-->
-    
     <div id="muffins">
         <h2>Muffins</h2>
-        <img src="trennstrich.png" alt="Trennstrich">
+        <img src="b/trennstrich.png" alt="Trennstrich">
         
         <h3 onclick="openElement('kalender')">Kalender wechseln</h3>
         <div id="kalender" style="display: none;">
@@ -341,11 +421,127 @@
                 <li><span>2FA für E-Mail-Dienst deiner Haupt-Emailadresse in Nutzung</span></li>
             </ul>
         </div>
+        
+        <h3 onclick="openElement('kartenanbieter')">Kartenanbieter wechseln</h3>
+        <div id="kartenanbieter" style="display: none;">
+            <p><b>was?</b><br>
+            Die meistgenutzten digitalen Kartenanbieter sind derzeit Google Maps und Apples. 
+            <br><br>
+            „Openstreetmap“ ist ein internationales Gemeinschaftsprojekt, dessen Karten jeder einlesen und 
+            bearbeiten kann, was sie besonders detailreich und aktuell hält. Zudem verdient das Projekt kein Geld mit der Auswertung deiner Daten. Da die Karten
+            frei einsehbar sind, gibt es viele verschiedene Apps zur Anzeige und Navigation. Ich nutze OrganicMaps, 
+            dessen Funktionen und Design mir am besten gefallen.<br>
+            Die App bietet weitere Vorteile: ganz Deutschland kann kartografisch für 4GB heruntergeladen werden. 
+            Dies ermöglicht auch eine Offline-Navigation.</p>
+            
+            <p><b>wie?</b><br>
+            Installiere dir die App „Organic Maps“ über den <a href="">AppStore</a>, den <a href="">Google Play Store</a> 
+            oder <a href="">F-Droid</a>. Zoome in ein Gebiet und klicke auf „Karte herunterladen“.</p>
+            
+            <p><b>Muffins?</b></p>
+            <ul class="bedingungen">
+                <li><span>Installation einer App zur Nutzung von OpenStreetMap, zB.: <a href="">Organic Maps</a>, 
+                <a href=""></a> oder <a href=""></a></span></li>
+                <li><span>Nutzung der App > Nutzung von Google Maps/Apple</span></span></li>
+            </ul>
+        </div>
+        
+        <h3 onclick="openElement('backup')">regelmäßiges Backup</h3>
+        <div id="backup" style="display: none;">
+            <p>„Kein Backup, kein Mitleid“ - eines meiner Lieblingssprüchwörter aus den IT-Kreisen.</p>
+        
+            <p><b>was?</b><br>
+            Ein Backup ist eine Datensicherung. Man speichert also Fotos, Telefonnummern und andere Daten an einem 
+            zweiten Ort, damit man sie nicht verliert, geht das Handy kaputt. Großen Diensten wie Google oder Apple 
+            seine Daten anzuvertrauen ist nicht nur aus datenschutztechnischer Persepektive ungeeignet. Auch stellen 
+            deren Server größere Angriffsziele für Hacker dar. Daher gehen zB. bei Google gesichterte Daten immer 
+            wieder verloren. <span class="tooltip" data-tooltip=""></span>
+            <br><br>
+            Deutlich sicherer und datensparsamer sind Dienste von Dezentralität und open-source (siehe
+            <span id="goTo" class="fakeLink" onclick="goTo('open-source')">weiter unten</span>).</p>
+            
+            <p><b>wie?</b><br>
+            Die einfachste und sicherste Variante um Daten zu sichern ist immernoch, offline eine Kopie auf einen 
+            USB-Stick oder eine externe Festplatte zu schieben. Folgend habe ich einige Dienste gelistet, die ihre 
+            Backups online speichern:</p>
+            
+            <table>
+                <tr>
+                    <td>Datum</td>
+                    <td>App</td>
+                </tr>
+                
+                <tr>
+                    <td>Fotos und Videos</td>
+                </tr>
+                
+                <tr>
+                    <td>Kontakte</td>
+                </tr>
+                
+                <tr>
+                    <td>andere Dateien, zB. einzelne Ordner</td>
+                </tr>
+                
+                <tr>
+                    <td>Passwörter</td>
+                    <td>verschlüsselt als Datei (siehe oben)</td>
+                </tr>
+            </table>
+            
+            <p><b>Muffins?</b><br></p>
+            <ul class="bedingungen">
+                <li><span>automatisches Backup eingerichtet oder regelmäßig manuell Sichern</span></li>
+                <li><span>Backup verschlüsselt</span></li>
+            </ul>
+        </div>
     </div>
     
     <div id="kuchen">
         <h2>Kuchen</h2>
-        <img src="trennstrich.png" alt="Trennstrich">
+        <img src="b/trennstrich.png" alt="Trennstrich">
+        
+        <h3 onclick="openElement('mail')">E-Mail-Anbieter wechseln</h3>
+        <div id="mail" style="display: none;">
+            <p><b>was?</b><br>
+            Dein E-Mail-Anbieter hat meist vollen Zugriff auf deine E-Mails und kann daraus automatisiert 
+            folgendes ableiten. <span onclick="openElement('maildaten')" class="fakeLink">wie?</span></p>
+            <ul>
+                <li>deine sozialen Beziehungen</li>
+                <li>dein Gesundheitszustand</li>
+                <li>dein Einkaufspräferenzen</li>
+                <li>deine politischen Ansichten</li>
+                <li>deine sexuelle Orientierung</li>
+                <li>deinen Beruf und Informationen zu Vertragsabschlüssen und -details</li>
+            </ul>
+            <p>Das sind alles Informationen, die man auch aus anderen Applikationen wie deinem Kalender 
+            oder Instagram-Account ableiten kann. Über deinen E-Mail-Verkehr gelingt dies jedoch zuverlässiger.</p>
+            
+            <div id="maildaten">
+                <table>
+                    <tr>
+                        <td>Datum</td>
+                        <td>Ursprung/ Anzeichen</td>
+                    </tr>
+                    <tr>
+                        <td>soziale Beziehungen</td>
+                        <td>Absender und Empfänger, Absendeuhrzeit, Häufigkeit, Länge und Schlüsselworte</td>
+                    </tr>
+                    <tr>
+                        <td>Gesundheitszustand</td>
+                        <td>Krankenkassen oder Arztpraxen als Absender, Häufigkeit, Schlüssworte</td>
+                    </tr>
+                    <tr>
+                        <td>Einkaufspräferenzen</td>
+                        <td>Registrierungen bei Shopping-Diensten, Kaufbestätigungen</td>
+                    </tr>
+                    <tr>
+                        <td>politische Ansichten</td>
+                        <td>Registrierungen bei Petitionsdiensten, Newsletter dieser, Newsletter von Zeitungen o.ä., Schlüsselworte</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
         
         <h3 onclick="openElement('browser')">Browser wechseln</h3>
         <div id="browser" style="display: none;">
@@ -391,21 +587,22 @@
             
             <p>Wichtig: es ist schwer, ohne weiteres Know-How Apps aus fremden Quellen auf Echtheit und Integrität zu überprüfen. Sei dir 
             bewusst, dass mit jeder App deren Quelle du nicht kennst ein Risiko einhergeht. Hole dir im Zweifelsfall Meinung von außerhalb 
-            und <b>installiere kein Programm, dem du nicht vertrauen kannst.</b><span onclick="openElement('fremde-apps')">Mehr erfahren</span></p>
+            und <b>installiere kein Programm, dem du nicht vertrauen kannst.</b> <span class="fakeLink" onclick="openElement('fremde-apps')">Mehr erfahren</span></p>
             
-            <p id="fremde-apps" style="display: none;">Mit jeder Installation eines Programms oder einer App entsteht ein Sicherheitsrisiko. Selbst im Google PlayStore 
+            <div id="fremde-apps" style="display: none;"><img src="b/exit.png" alt="Kreuz" onclick="openElement('fremde-apps')"><br>
+            Mit jeder Installation eines Programms oder einer App entsteht ein Sicherheitsrisiko. Selbst im Google PlayStore 
             und auch im AppStore tauchen regelmäßige gefälschte Apps auf.<br>
             Das Risiko, Malware zu installieren, ist in den vorinstallierten Appstores der Hersteller dennoch deutlich geringer.
             <br><br>
             Überprüfe daher am besten jedes Programm auf Kritiken und Beurteilungen von außerhalb.<br>
             Überprüfe ebenfalls die Domain auf ihre Echtheit, bspw. kannst du in Wikipedia die offizielle Domain des Projektes aufsuchen.<br>
             <br><br>
-            Windows:<br>
+            <i>Windows:</i><br>
             Aufgrund der Komplexität und Funktionsweise von Windows stellt Malware dort ein besonders großes Risiko dar. Typische Angriffsszenarien 
             reichen von heimlichen Datenverarbeitung (Sammeln, Analysieren und Verkaufen von persönlichen Informationen) über das Auslesen von 
             Passwörtern bis hin zur Verschlüsselung ganzer Systempartitionen zur Erpressung (Ransomware).
             <br><br>
-            Android:<br>
+            <i>Android:</i><br>
             Auf mobilen Geräten wie Android ist das Risiko in den allermeisten Fällen begrenzt, da Apps dort im sogenannten „Sandbox-Modus“ laufen. 
             Das heißt, dass sie nur auf ihre eigenen Dateien Zugriff haben und andere Apps oder Teile des Gerätes nicht beeinflussen können. Dennoch 
             birgt Malware zwei Angriffspfade:
@@ -422,28 +619,33 @@
             - Verfolgen mehrere Personen die Projektänderungen? ("Beobachter")<br>
             - Werden regelmäßig Updates ausgegeben? ("Versionen")
             <br><br>
-            Umso mehr Mitwirkende und regelmäßigere, neue Versionen, umso sicherer ist das angebotene Programm.</p>
+            Umso mehr Mitwirkende und regelmäßigere, neue Versionen, umso sicherer ist das angebotene Programm.</div>
             
             <ul>
-                <li>Google PlayStore / Apples AppStore:<br>
+                <li><i>Google PlayStore / Apples AppStore:</i><br>
                 Suche im Internet nach "[deine App] open-source" und finde die Website des Projektes/Herstellers. Falls die App auch 
                 über den GPlayStore oder AppStore angeboten wird, verlinkt die Website dahin. Dort kannst du sie installieren.</li>
                 
-                <li>Windows:<br>
+                <li><i>Windows:</i><br>
                 Suche im Internet nach "[deine App] open-source" und finde die Website des Projektes/Herstellers. Dort steht meist unter 
                 "Download" beschrieben, wie du das Programm installierst. Meist musst du dafür eine .exe, .zip oder . herunterladen und 
                 öffnen.</li>
                 
-                <li>Android ohne GPlayStore:<br>
+                <li><i>Android ohne GPlayStore:</i><br>
                 Suche im Internet nach "[deine App] open-source" und finde die Website des Projektes/Herstellers. Um eine App auf Android 
                 ohne den GPlayStore zu installieren, musst du zunächst eine Installationsdatei der App herunterladen. Sie hat das Format .apk.
                 Klicke sie anschließend in deinem Dateimanager (Dateimanager/ Files / Downloads) an und bestätige dass der Dateimanager Apps 
                 aus unbekannten Quellen installieren darf. Öffne sie erneut.</li>
                 
-                <li>Android ohne GPlayStore:<br>
+                <li><i>Android ohne GPlayStore:</i><br>
                 Für Android gibt es den alternativen AppStore F-Droid. Du kannst ihn dir als .apk installieren. Einmal eingerichtet 
                 kannst du über ihn unkompliziert neue Apps installieren. Alle in ihm angebotenen Apps sind nicht nur open-source, sondern 
                 auch auf ihre Sicherheit überprüft.</li>
+            </ul>
+            
+            <p><b>Kuchen?</b></p>
+            <ul class="bedingungen">
+                <li><span>zwei Open-source Apps installiert und in Nutzung</span></li>
             </ul>
         </div>
         
@@ -532,55 +734,117 @@
         </div>
    </div>
         
-        <div id="torte">
-            <h2>Torte</h2>
-            <img src="trennstrich.png" alt="Trennstrich">
+    <div id="torte">
+        <h2>Torte</h2>
+        <img src="b/trennstrich.png" alt="Trennstrich">
+    
+        <h3 onclick="openElement('passwort')">zufällige Passwörter mittels Passwortmanager</h3>
+        <div id="passwort" style="display: none;">
+            <p>Im Jahr 2025 wurden weltweit rund 425,7 Millionen Accounts im Internet geknackt, was 14 jede Sekunde 
+            entspricht <span class="tooltip" data-tooltip='laut Angaben des VPN-Dienstes <a target="_blank" href="https://surfshark.com/research/study/data-breach-recap-2025">
+            Surfshark</a>'></span> - ein zu großer Teil davon aufgrund zu schwacher Passwörter.</p>
         
-            <h3 onclick="openElement('custom-rom')">alternatives Betriebsystem</h3>
-            <div id="custom-rom" style="display: none;">
-                <p>Die allermeisten Computern die man kauft wollen bereits im Auslieferungszustand
-                „nach Hause telefonieren“. Wie kann man sich von Google oder Apple trennen, wenn 
-                das Handy doch von ihnen gebaut wurde? Man überschreibt die Software mit einer anderen.</p>
+            <p><b>was?</b><br>
+            Heute braucht es keinen Agenten mehr, der speziell dich im Visier hat, um dein Passwort zu knacken. Auf 
+            Instagram beispielsweise erfolgen die Angriffe zufällig. Es braucht für den Angriff keinen Menschen mehr: 
+            eine Software gibt ein Passwort ein und klickt "Einloggen". Funktioniert das nicht, probiert sie ein weiteres. 
+            Ziel ist auf dieser Plattform meist, auf deinem Account Werbung für ein Produkt zu machen. Ich persönlich kenne zwei 
+            Menschen, denen das passiert ist.
+            <br><br>
+            Es ist wichtig, ein langes Passwort zu wählen, da Angreifer mit modernen Computern bis zu *** Zeichenkombinationen 
+            pro Minute für dein Kennwort durchprobieren können. Bitte wähle kein Passwort unter zwölf Zeichen.<br>
+            Weiter testen Angreifer bekannte Kombinationen zuerst. Du senkst die Wahrscheinlichkeit dafür, dass dein 
+            Passwort erraten wird, erheblich, indem du es zufällig generieren lässt. </p>
+        
+            <p><b>wie?</b><br>
+            Es gibt verschiedene Apps, mit denen du zufällige Kennwörter generieren, speichern und ggf. über mehrere 
+            Geräte synchronisieren kannst. Diese Apps nennt man Passwortmanager.</p>
+            <ol>
+                <li>Installiere dir einen Passwortmanager, wie zB. KeePass (<a href="">Android</a>, <a href="">Windows</a>) 
+                oder *** (<a href="">Apple</a>)</li>
                 
-                <p><b>was?</b><br>
-                Handys bestehen aus Hardware und Software. Ein Teil der Software nennt man Betriebssystem, 
-                welches typischerweise vom Verkäufer, stammt. Kaufe ich ein Handy von Samsung, so ist da 
-                auch Software von Samsung drauf. Dieses Betriebssystem kann ich gegen ein anderes tauschen.
-                <br><br>
-                Große Communitys haben eigene Betriebssystem erstellt, die mehrere Vorteile bieten:
-                <ul>
-                    <li>Die Software läuft auch auf alten Geräten, für die die Hersteller längst die Udpates eingestellt haben</li>
-                    <li>Die Software ist "open source" - jeder kann sie auf Fehler überprüfen und mitschreiben. Das macht sie besonders sicher</li>
-                    <li>Die Software ist anpassbar. Man kann sie zum Beispiel vollständig ohne Google nutzen</li>
-                </ul>
-                </p>
+                <li>Erstelle eine neue Datenbank. Zum Verschlüsseln und Entsperren der Datenbank, in der deine Passwörter gespeichert 
+                werden, musst du ein besonders sicheres Kennwort anlegen, genannt Hauptschlüssel. Merke oder notiere dir diesen Hauptschlüssel</li>
+            
+                <li>In KeePass und *** kannst du Passwörter generieren lassen. Ich verwende dazu eine eigene Website: <a href="honest-entropie.github.io">
+                honest-entropie.github.io</a>. Generiere ein Passwort und setze es für einen Account ein</li>
+            
+                <li>Speichere das neue Passwort und den Namen des Accounts im Passwortmanager</li>
                 
-                <div><b>wie?</b><br>
-                ...google mal.
-                <br><br>
-                    <p><i>Android</i><br>
-                    Die größten Communitys sind GrapheneOS, LineageOS und /e/. Stichwort zum Recherchieren: Custom-ROM.</p>
-                    
-                    <p><i>iPhone</i><br>
-                    nur sehr begrenzt verfügbar und deutlich schwieriger. Stichwort zum Recherchieren: Jailbreak</p>
+                <li>Speichere deine Datenbank im Telefon- oder Computerspeicher und speichere eine Kopie auf einem USB-Stick oder externen Festplatte, 
+                falls dein Handy/Computer kaputt geht</li>
+            </ol>
+            
+            <p><b>Torte?</b></p>
+            <ul class="bedingungen">
+                <li><span>Passwortmanager mit Fokus auf Sicherheit und Datenschutz eingerichtet, zB. KeePass, <a href=""></a> oder <a href=""></a> 
+                (Kennwörter die man sich merken kann sind unsicher)</span></li>
+                <li><span>min. drei Passwörter in Datenbank gespeichert und in min. drei Accounts aktiv</span></li>
+                <li><span>Kopie der Datenbank angelegt</span></li>
+            </ul>
+        </div>
+    
+        <h3 onclick="openElement('custom-rom')">alternatives Betriebsystem</h3>
+        <div id="custom-rom" style="display: none;">
+            <p>Die allermeisten Computern die man kauft wollen bereits im Auslieferungszustand
+            „nach Hause telefonieren“. Wie kann man sich von Google oder Apple trennen, wenn 
+            das Handy doch von ihnen gebaut wurde? Man überschreibt die Software mit einer anderen.</p>
+            
+            <p><b>was?</b><br>
+            Handys bestehen aus Hardware und Software. Ein Teil der Software nennt man Betriebssystem, 
+            welches typischerweise vom Verkäufer, stammt. Kaufe ich ein Handy von Samsung, so ist da 
+            auch Software von Samsung drauf. Dieses Betriebssystem kann ich gegen ein anderes tauschen.
+            <br><br>
+            Große Communitys haben eigene Betriebssystem erstellt, die mehrere Vorteile bieten:
+            <ul>
+                <li>Die Software läuft auch auf alten Geräten, für die die Hersteller längst die Udpates eingestellt haben</li>
+                <li>Die Software ist "open source" - jeder kann sie auf Fehler überprüfen und mitschreiben. Das macht sie besonders sicher</li>
+                <li>Die Software ist anpassbar. Man kann sie zum Beispiel vollständig ohne Google nutzen</li>
+            </ul>
+            </p>
+            
+            <div><b>wie?</b><br>
+            ...google mal.
+            <br><br>
+                <p><i>Android</i><br>
+                Die größten Communitys sind GrapheneOS, LineageOS und /e/. Stichwort zum Recherchieren: Custom-ROM.</p>
+                
+                <p><i>iPhone</i><br>
+                nur sehr begrenzt verfügbar und deutlich schwieriger. Stichwort zum Recherchieren: Jailbreak</p>
 
-                <p><b>Torte und Props</b>
-                <ul class="bedingungen">
-                    <li><span>Custom-ROM installiert</span></li>
-                    <li><span>optional: Gerät ist intakt</span></li>
-                </ul></p></div>
-            </div>
+            <p><b>Torte und Props</b>
+            <ul class="bedingungen">
+                <li><span>Custom-ROM installiert</span></li>
+                <li><span>optional: Gerät ist intakt</span></li>
+            </ul></p></div>
         </div>
     </div>
+    
+    <p>#dutgemacht</p>
 </main>
     
 <script>
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.querySelector("body").classList.add("darkmode");
+    document.querySelector("main > img:nth-of-type(1)").src = "b/kgd-dark.png";
+    document.querySelector("#anfang img:nth-of-type(1)").src = "b/brownies-flipped.png";
+    document.querySelectorAll("main > div > img:nth-of-type(1):not(#anfang img)").forEach(img => {
+        img.src = "b/trennstrich-dark.png";
+    });
+}
+
 const params = new URLSearchParams(window.location.search);
 const topic = params.get("topic");
 
 if (topic) {
     const element = document.getElementById(topic);
+
     element.style.display = "block";
+    element.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+    
 }
     
 function openElement(id) {
@@ -597,6 +861,15 @@ function openElement(id) {
         url.searchParams.delete("topic");
         history.pushState({}, "", url);
     }
+}
+
+async function goTo(id) {
+    await openElement(id);
+
+    document.getElementById(id).scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
     
 // --- Tooltip ---

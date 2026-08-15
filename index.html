@@ -48,7 +48,7 @@
         
         main > img {
             pointer-events: none;
-            width: 90%;
+            width: 60%;
             height: auto;
             margin-bottom: 8%;
         }
@@ -258,7 +258,7 @@
             }
 
             main > img {
-                width: 60%;
+                width: 90%;
             }
 
             main > p {
@@ -831,10 +831,13 @@
 if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.querySelector("body").classList.add("darkmode");
     document.querySelector("main > img:nth-of-type(1)").src = "b/kgd-dark.png";
-    document.querySelector("#anfang img:nth-of-type(1)").src = "b/brownies-flipped.png";
     document.querySelectorAll("main > div > img:nth-of-type(1):not(#anfang img)").forEach(img => {
         img.src = "b/trennstrich-dark.png";
     });
+}
+
+if (window.matchMedia('(min-width: 768px)').matches) {
+    document.querySelector("#anfang img:nth-of-type(1)").src = "b/brownies-flipped.png";
 }
 
 const params = new URLSearchParams(window.location.search);

@@ -70,7 +70,7 @@
             <p><b>wie?</b><br>
             Drei Kalender, die Wert auf Datenschutz und Sicherheit legen, sind <a href="https://tuta.com/de/calendar">Tuta Calendar</a>,
             <a href="https://github.com/Etar-Group/Etar-Calendar">Etar (Android)</a> 
-            und <a href="https://www.fossify.org/apps/calendar/">Fossify Calendar (Android)</a>
+            und <a href="https://www.fossify.org/apps/calendar/">Fossify Calendar (Android)</a>.
             Sie lassen sich über den Google Play Store bzw. Apples AppStore herunterladen und sind sychronisierbar mit 
             anderen Geräten.</p>
             
@@ -90,7 +90,7 @@
             <br><br>
             Viele weitere Messenger bieten die selben oder ähnliche Funktionen wie Whatsapp, ohne dass sie 
             so viele Daten speichern, die technisch nicht notwendig sind. Der Grund, weshalb Whatsapp sich weiterhin 
-            derart vielen Nutzern erfreut ist, dass man viele Menschen eben nur über diesen Dienst erreicht. Durch die 
+            derart vielen Nutzern erfreut ist, dass man viele Menschen nur über diesen Dienst erreicht. Durch die 
             Installation eines zusätzlichen Messengers wirkst du der Stellung Whatsapps entgegen.</p>
             
             <p><b>wie?</b><br>
@@ -108,8 +108,9 @@
         
         <h3 onclick="openElement('2fa')">Zwei-Faktor-Authentifizierung</h3>
         <div id="2fa" style="display: none;">
-            <p>Alle drei Minuten wird ein Account im Internet geknackt - eine Zwei-Faktor-Authetifizierung 
-            kann die Chance dafür auf nahezu Null senken.</p>
+            <p>In einer Umfrage der verbraucherzentrale gaben 30% der Befragten an, dass bereits einmal einer ihrer persönlichen Online-Accounts 
+            übernommen, aka. gehackt, wurde <span class="tooltip" data-tooltip="siehe <a href='https://www.verbraucherzentrale.nrw/pressemitteilungen/repraesentative-umfrage-fast-jeder-dritte-wurde-gehackt-89562'>hier</a>"></span> - 
+            eine Zwei-Faktor-Authetifizierung kann die Chance dafür auf nahezu Null senken.</p>
             
             <p><b>was?</b><br>
             Üblicherweise authentifiziert man sich nur mit einem Passwort, also mit einem Faktor.
@@ -127,7 +128,7 @@
             Die Einrichtung dauert nur wenige Minuten und läuft typischerweise so ab:</p>
             <ol>
                 <li>Installiere dir eine App zum Berechnen der Einmal-Codes, zB: <a href="https://freeotp.github.io/">FreeOTP</a> 
-                    oder <a href="https://github.com/helloworld1/FreeOTPPlus">FreeOTP Plus</a></li>
+                    oder <a href="https://github.com/helloworld1/FreeOTPPlus">FreeOTP Plus (Android)</a></li>
                 <li>Logge dich in den zu sichernden Account ein und gehe in die Accounteinstellungen -> Sicherheit -> 
                     Zwei-Faktor-Authentifizierung und bestätige.</li></li></li>
                 <li>Meist musst du einen QR-Code scannen oder einen Link klicken. Dann wird 2FA automatisch 
@@ -147,7 +148,7 @@
         <h3 onclick="openElement('kartenanbieter')">Kartenanbieter wechseln</h3>
         <div id="kartenanbieter" style="display: none;">
             <p><b>was?</b><br>
-            Die meistgenutzten digitalen Kartenanbieter sind derzeit Google Maps und Apple Maps. 
+            Die meistgenutzten digitalen (Land-)kartenanbieter sind derzeit Google Maps und Apple Maps. 
             <br><br>
             „Openstreetmap“ ist ein internationales Gemeinschaftsprojekt, dessen Karten jeder einlesen und 
             bearbeiten kann, was sie besonders detailreich und aktuell hält. Zudem verdient das Projekt kein Geld mit der Auswertung deiner Daten. Da die Karten
@@ -171,7 +172,7 @@
         
         <h3 onclick="openElement('backup')">regelmäßiges Backup</h3>
         <div id="backup" style="display: none;">
-            <p>„Kein Backup, kein Mitleid“ - eines meiner Lieblingssprüchwörter aus den IT-Kreisen.</p>
+            <p>„Kein Backup, kein Mitleid“ - eines meiner Lieblingssprüchwörter aus IT-Kreisen.</p>
         
             <p><b>was?</b><br>
             Ein Backup ist eine Datensicherung. Man speichert also Fotos, Telefonnummern und andere Daten an einem 
@@ -197,7 +198,7 @@
                 
                 <tr>
                     <td>Fotos und Videos</td>
-                    <td><a href="https://ente.com/de/download/">Ente</a></td>
+                    <td><a href="https://ente.com/de/download/">Ente</a> (bis 10 GB kostenfrei)</td>
                 </tr>
                 
                 <tr>
@@ -207,12 +208,12 @@
                 
                 <tr>
                     <td>andere Dateien, zB. einzelne Ordner</td>
-                    <td><a href="https://filen.io/products/web">Filen</a></td>
+                    <td><a href="https://filen.io/products/web">Filen</a> (bis 10 GB kostenfrei) aa</td>
                 </tr>
                 
                 <tr>
                     <td>Passwörter</td>
-                    <td>verschlüsselt als Datei (siehe oben)</td>
+                    <td>verschlüsselt als Datei (siehe <span class="fakeLink" onclick="goTo('passwort')">Passwortmanager</span></td>
                 </tr>
             </table>
             
@@ -301,9 +302,9 @@
             selbst teilst.</p>
             
             <p><b>wie?</b><br>
-            Brave (Browser) und Brave Search (Suchmaschine) müssen keine nicht-notwendigen Daten 
-            über dich speichern und können Tracker und Werbung der Websites blockieren. In den meisten Fällen kannst du 
-            die Website vollfunktionstüchtig nutzen. Er ist über den Google Playstore und Apples AppStore 
+            Brave (Browser) und Brave Search (Suchmaschine) speichern standardmäßig nur wenige nicht-notwendigen Daten 
+            über dich speichern und blockieren Tracker und Werbung von Websites. In den meisten Fällen kannst du 
+            die Website vollfunktionstüchtig nutzen. Brave ist über den Google Playstore und Apples AppStore 
             herunterladbar und steht auch Windows- und Mac-Usern zur Verfügung.</p>
         
             <p><b>Kuchen?</b><br>
@@ -319,7 +320,7 @@
         <div id="open-source" style="display: none;">
             <p><b>was?</b><br>
             Im Quellcode einer App oder Website steht geschrieben, wie das Programmm funktioniert. Beispielsweise sagt der Code dass ein Kalender 
-            angezeigt wird und darin die einzelnen Termine, aber 
+            und darin die einzelnen Termine angezeigt werden, aber 
             auch dass Daten gespeichert, analysiert und weitergegeben werden.
             <br><br>
             „Open-Source“ bedeutet quelloffen - jeder kann den Quellcode einsehen, Probleme melden und daran mitarbeiten. 
@@ -327,12 +328,12 @@
             heimlich Daten zu sammeln und zu verkaufen. Die meisten Entwickler dieser Apps legen viel Wert auf Datenschutz.</p>
             
             <p><b>wie?</b><br>
-            Auf Android und Windows gibt es drei Wege eine App mit offenem Quellcode zu installieren. Wenn du ein iPhone oder Macl
+            Auf Android und Windows gibt es drei Wege eine App mit offenem Quellcode zu installieren. Wenn du ein iPhone oder Mac
             besitzt, ist ohne eine tiefere Recherche nur Option 1 für dich einfach umsetzbar. Um zu prüfen, ob eine App wirklich open-source 
             ist, kannst du auf der Website des Projektes/Herstellers den Quellcode suchen. Häufig ist er unter "Github" zu finden.</p>
             
             <p>Wichtig: es ist schwer, ohne weiteres Know-How Apps aus fremden Quellen auf Echtheit und Integrität zu überprüfen. Sei dir 
-            bewusst, dass mit jeder App,l deren Quelle du nicht kennst, ein Risiko einhergeht. Hole dir im Zweifelsfall Meinung von außerhalb 
+            bewusst, dass mit jeder App, deren Quelle du nicht kennst, ein Risiko einhergeht. Hole dir im Zweifelsfall Meinung von außerhalb 
             und <b>installiere kein Programm, dem du nicht vertrauen kannst.</b> Bitte lade auch keine Programme von Vergleichs- oder Testseiten wie chip.de herunter. <span class="fakeLink" onclick="openElement('fremde-apps')">Mehr erfahren</span></p>
             
             <div id="fremde-apps" style="display: none;"><img src="b/exit.png" alt="Kreuz" onclick="openElement('fremde-apps')"><br>
@@ -346,7 +347,7 @@
             <i>Windows:</i><br>
             Aufgrund der Komplexität und Funktionsweise von Windows stellt Malware dort ein besonders großes Risiko dar. Typische Angriffsszenarien 
             reichen von heimlicher Datenverarbeitung (Sammeln, Analysieren und Verkaufen von persönlichen Informationen) über das Auslesen von 
-            Passwörtern bis hin zur Verschlüsselung ganzer Systempartitionen zur Erpressung (Ransomware).
+            Passwörtern bis hin zur Verschlüsselung ganzer Systempartitionen zur Erpressung (Ransomware). Ähnlich steht es um Mac.
             <br><br>
             <i>Android:</i><br>
             Auf mobilen Geräten wie Android ist das Risiko in den allermeisten Fällen begrenzt, da Apps dort im sogenannten „Sandbox-Modus“ laufen. 
@@ -359,12 +360,12 @@
             In seltenen Fällen kann die Installation eines Schadprogrammes auch auf Android geräteweite Auswirkungen haben. 
             <br><br>
             Um eine vermeintliche Open-Source-App auf Echtheit und Integrität zu überprüfen hast du folgende Möglichkeiten:
-            Häufig laufen quelloffene Projekte über die Plattform "Github". Suche daher nach dem Quellcode der App oder nach Github über die Website des 
+            Häufig laufen quelloffene Projekte über die Plattform "Github". Suche daher nach dem Quellcode der App oder nach "Github" über die Website des 
             Projektes/ Herstellers. Schau dir nun folgende Merkmale an:<br>
             - Arbeiten mehrere Personen an dem Projekt mit? ("Mitwirkende")<br>
             - Verfolgen mehrere Personen die Projektänderungen? ("Beobachter")<br>
             - Werden regelmäßig Updates ausgegeben? ("Versionen"<br>
-            - Hat das Projekt viele positive Bewertungen erhaltem ("Sterne")
+            - Hat das Projekt viele positive Bewertungen erhalten ("Sterne")
             <br><br>
             Umso mehr Mitwirkende und regelmäßigere, neue Versionen, umso sicherer ist das angebotene Programm.</div>
             
@@ -394,7 +395,7 @@
             
             <p><b>Kuchen?</b></p>
             <ul class="bedingungen">
-                <li><span>zwei Open-source Apps installiert und in Nutzung</span></li>
+                <li><span>zwei open-source Apps installiert und in Nutzung</span></li>
             </ul>
         </div>
         
@@ -541,10 +542,10 @@
     
         <h3 onclick="openElement('passwort')">zufällige Passwörter mittels Passwortmanager</h3>
         <div id="passwort" style="display: none;">
-            <p>Im Jahr 2025 wurden weltweit rund 425,7 Millionen Accounts im Internet geknackt, was 14 jede Sekunde 
-            entspricht <span class="tooltip" data-tooltip='laut Angaben des VPN-Dienstes <a target="_blank" href="https://surfshark.com/research/study/data-breach-recap-2025">
-            Surfshark</a>'></span> - ein zu großer Teil davon aufgrund zu schwacher Passwörter.</p>
-        
+            <p>In einer Umfrage der verbraucherzentrale gaben 30% der Befragten an, dass bereits einmal einer ihrer persönlichen Online-Accounts 
+            übernommen, aka. gehackt, wurde <span class="tooltip" data-tooltip="siehe <a href='https://www.verbraucherzentrale.nrw/pressemitteilungen/repraesentative-umfrage-fast-jeder-dritte-wurde-gehackt-89562'>hier</a>"></span> - 
+            und ein zu großer Teil von Accountübernahmen im Internet geschieht durch zu schwache Passwörter.</p>
+            
             <p><b>was?</b><br>
             Heute braucht es keinen Agenten mehr, der speziell dich im Visier hat, um dein Passwort zu knacken. Auf 
             Instagram beispielsweise erfolgen die Angriffe zufällig. Es braucht für den Angriff keinen Menschen: 
@@ -566,7 +567,7 @@
                 <li>Erstelle eine neue Datenbank. Zum Verschlüsseln und Entsperren der Datenbank, in der deine Passwörter gespeichert 
                 werden, musst du ein besonders sicheres Kennwort anlegen, genannt Hauptschlüssel. Merke oder notiere dir diesen Hauptschlüssel</li>
             
-                <li>In KeePass kannst du Passwörter generieren lassen. Ich verwende dazu eine eigene Website: <a href="honest-entropie.github.io">
+                <li>In KeePass kannst du Passwörter generieren lassen. Ich verwende dazu eine eigene Website: <a href="https://honest-entropie.github.io">
                 honest-entropie.github.io</a>. Generiere ein Passwort und setze es für einen Account ein</li>
             
                 <li>Speichere das neue Passwort und den Namen des Accounts im Passwortmanager</li>
@@ -593,7 +594,7 @@
             
             <p><b>was?</b><br>
             Handys bestehen aus Hardware und Software. Ein Teil der Software nennt man Betriebssystem, 
-            welches typischerweise vom Verkäufer, stammt. Kaufe ich ei n Handy von Samsung, so ist 
+            welches typischerweise vom Verkäufer stammt. Kaufe ich ein Handy von Samsung, so ist 
             darauf Software von Samsung. Dieses Betriebssystem kann ich gegen ein anderes tauschen.
             <br><br>
             Große Communitys haben eigene Betriebssysteme erstellt, die mehrere Vorteile bieten:

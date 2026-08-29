@@ -262,10 +262,12 @@ main > :nth-last-child(2) {
     margin-top: 80px;
     font-family: "architectsdaughter";
     color: grey;
+    text-align: right;
 }
 
 main > :last-child {
     color: grey;
+    text-align: right;
 }
 
 main > :last-child a {

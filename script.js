@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
             icon.style.opacity = "0.5";
         }
 
+        link.target = "_blank";
         link.appendChild(icon);
     });
 });

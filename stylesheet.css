@@ -16,6 +16,7 @@
 a, .fakeLink {
     color: #2482ff;
     text-decoration: underline;
+    cursor: pointer;
 }
 
     body.darkmode a, body.darkmode .fakeLink {
@@ -244,7 +245,7 @@ main > div > div ul:last-of-type {
     color: white;
     z-index: 1;
     padding: 10%;
-    padding-top: 20%;
+    padding-top: 10%;
     overflow-y: scroll;
     overscroll-behavior: contain;
     box-sizing: border-box;
@@ -256,6 +257,7 @@ main > div > div ul:last-of-type {
     position: absolute;
     top: 5%;
     left: 10%;
+    cursor: pointer;
 }
 
 main > :nth-last-child(2) {
@@ -399,4 +401,7 @@ body.darkmode .bedingungen li:before {
     h2:not(#idee h2) {
         margin: 60px 0 -7px 10px;
     }
+
+    #fremde-apps, #domainblock {
+        padding-top: 20%;
 }

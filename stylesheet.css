@@ -194,6 +194,10 @@ main > div > div {
     vertical-align: top;
 }
 
+body.darkmode .tabelle tr td {
+    border: 1px solid white;
+}
+
 .tabelle tr:nth-of-type(1) td {
     border-top: none;
     border: 1px solid white;
